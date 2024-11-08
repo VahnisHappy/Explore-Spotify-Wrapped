@@ -47,7 +47,7 @@ const songs: SongProps[] = [
     { artists: "Artist 3" }
 ]
 
-export default function MixtapeApp () {
+export default function Wrapped () {
     const [selectedOption, setSelectedOption] = useState<string>('tracks')
     const handleControlChange = (e: React.ChangeEvent<HTMLSelectElement>) => {setSelectedOption(e.target.value)}
 
@@ -61,7 +61,7 @@ export default function MixtapeApp () {
                     {selectedOption === 'tracks' && <SongList />}
                     {selectedOption === 'artists' && <ArtistList />}
                     </div>
-                    <div className="flex-shrink-0">
+                    <div className="flex-shrink-0 text-left">
                     <p>Explore My Spotify Wrapped</p>
                     <p>Metric</p>
                     <Control selectedOption={selectedOption} handleChange={handleControlChange} />

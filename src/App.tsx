@@ -1,12 +1,10 @@
-import React from 'react';
-import logo from './logo.svg';
 import './App.css';
-import MixtapeApp from './components/MixtapeApp';
+import Wrapped from './components/Wrapped';
 
 function App() {
   return (
     <div className="App">
-      <MixtapeApp/>
+      <Wrapped/>
     </div>
   );
 }
