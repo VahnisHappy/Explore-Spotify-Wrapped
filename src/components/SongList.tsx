@@ -18,25 +18,10 @@ export default function SongList ({}){
     if (!context) throw new Error("Controls must be used within a MixtapeProvider")
 
     const { genre, sortOrder, songs } = context
-    const [filteredSongs, setFilteredSongs] = useState<SongProps[]>(songs)
-
-    useEffect(() => {
-        const newArr = [...songs]
-        if (genre === "all"){
-            setFilteredSongs(
-                newArr.sort(sortOrder === "ascending" ? ascending : descending)
-            )
-        } else {
-            setFilteredSongs(
-                newArr.filter((song) => song.genre === genre).sort(sortOrder === "ascending" ? ascending : descending)
-            )
-        }
-    }, [genre, sortOrder, songs])
 
     return (
         <div>
             {songs.map((song: SongProps) => ( <Song {...song} key={song.name} />))}
-            {/* {filteredSongs.map((song : SongProps) => (<Song {...song} key={song.name}/>))} */}
         </div>
     )
 }
