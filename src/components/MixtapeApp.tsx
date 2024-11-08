@@ -6,6 +6,7 @@ import { SongProps } from "./Song"
 import Header from "./Header"
 import { ArtistProps } from "./Artist"
 import ArtistList from "./ArtistList"
+import { useState } from "react"
 
 const songs: SongProps[] = [
     {
@@ -47,6 +48,9 @@ const songs: SongProps[] = [
 ]
 
 export default function MixtapeApp () {
+    const [selectedOption, setSelectedOption] = useState<string>('tracks')
+    const handleControlChange = (e: React.ChangeEvent<HTMLSelectElement>) => {setSelectedOption(e.target.value)}
+
     return(
         <ArtistContextProvider artists={artists}>
             <MixtapeContextProvider songs={songs}>
@@ -54,13 +58,13 @@ export default function MixtapeApp () {
                 <Header />
                 <div className="flex flex-row gap-x-4 mt-[45px]">
                     <div className="flex-1">
-                    <SongList />
-                    <ArtistList/>
+                    {selectedOption === 'tracks' && <SongList />}
+                    {selectedOption === 'artists' && <ArtistList />}
                     </div>
                     <div className="flex-shrink-0">
-                        <p>Explore My Spotify Wrapped</p>
-                        <p>Metric</p>
-                        <Control />
+                    <p>Explore My Spotify Wrapped</p>
+                    <p>Metric</p>
+                    <Control selectedOption={selectedOption} handleChange={handleControlChange} />
                     </div>
                 </div>
                 </div>
