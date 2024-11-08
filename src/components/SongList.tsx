@@ -35,7 +35,8 @@ export default function SongList ({}){
 
     return (
         <div>
-            {filteredSongs.map((song : SongProps) => (<Song {...song} key={song.name}/>))}
+            {songs.map((song: SongProps) => ( <Song {...song} key={song.name} />))}
+            {/* {filteredSongs.map((song : SongProps) => (<Song {...song} key={song.name}/>))} */}
         </div>
     )
 }

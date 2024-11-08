@@ -23,6 +23,8 @@ export default function MixtapeContextProvider ({children, songs}: MixtapeProvid
     const [genre, setGenre] = useState<string>("all")
     const [sortOrder, setSortOrder] = useState<string>("ascending")
 
+    
+
     return(
         <MixtapeContext.Provider value={{ songs, genre, setGenre, sortOrder, setSortOrder }}>
             {children}
