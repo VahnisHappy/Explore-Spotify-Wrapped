@@ -1,6 +1,6 @@
 import { useContext, useEffect, useState } from "react"
 import { ArtistContext } from "./ArtistContext"
-import Artist,{ ArtistProps } from "./Artist"
+import Artist from "./Artist"
 
 
 export default function ArtistList() {
