@@ -17,7 +17,7 @@ export default function SongList ({}){
 
     if (!context) throw new Error("Controls must be used within a MixtapeProvider")
 
-    const { genre, sortOrder, songs } = context
+    const { songs } = context
 
     return (
         <div>

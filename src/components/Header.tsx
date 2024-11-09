@@ -6,7 +6,7 @@ export default function Header () {
                 <div className="text-center text-[16px]">
                     I’ve put together a snapshot of my top songs, artists, and genres from this year 2024, 
                     and I’m excited to share it with you.<br />
-                    Dive in to see the tracks that shaped my year – maybe you'll find some new favorites too!
+                    Dive into see the tracks that shaped my year – maybe you'll find some new favorites too!
                 </div>
         </div>
     )
